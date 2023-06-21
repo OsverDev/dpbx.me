@@ -1,7 +1,7 @@
 <?php
 
 // Include the Mobile_Detect.php file
-require_once '/mobileDetect/src/Mobile_Detect.php';
+require_once './mobileDetect/src/Mobile_Detect.php';
 
 $user_agent = $_SERVER['HTTP_USER_AGENT'];
 
