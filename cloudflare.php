@@ -1,13 +1,18 @@
 <?php
 
+// Include the Mobile_Detect.php file
+require_once '/mobileDetect/src/Mobile_Detect.php';
+
 $user_agent = $_SERVER['HTTP_USER_AGENT'];
 
-// Check if the browser function is available
-if (function_exists('get_browser')) {
-  $browser = get_browser($user_agent, true);
-  $device_model = $browser['device_model'] ?? 'Unknown';
+// Create a new instance of Mobile_Detect
+$detect = new Mobile_Detect;
+
+// Check if the user agent belongs to a mobile device
+if ($detect->isMobile()) {
+  // Get the device model
+  $device_model = $detect->getDeviceName();
 } else {
-  // Fallback if get_browser() function is not available
   $device_model = 'Unknown';
 }
 
