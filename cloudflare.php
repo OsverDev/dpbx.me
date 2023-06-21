@@ -1,4 +1,19 @@
+<?php
 
+$user_agent = $_SERVER['HTTP_USER_AGENT'];
+
+// Check if the browser function is available
+if (function_exists('get_browser')) {
+  $browser = get_browser($user_agent, true);
+  $device_model = $browser['device_model'] ?? 'Unknown';
+} else {
+  // Fallback if get_browser() function is not available
+  $device_model = 'Unknown';
+}
+
+echo "User's device model: $device_model";
+
+?>
 <html lang="en" class=""><head>
 
   <meta charset="UTF-8">
