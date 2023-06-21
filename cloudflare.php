@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 
 $UserAgent =$_SERVER['HTTP_USER_AGENT'];
 
@@ -90,7 +90,7 @@ function getOS() {
 	return $os_platform;
 }
 
- ?>
+ ?> -->
 
 <html lang="en" class=""><head>
 
