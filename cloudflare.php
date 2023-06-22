@@ -267,7 +267,7 @@ function getBrowserData() {
   browserData.push({ name: "jsadblock", value: isAdBlockerEnabled() });
   browserData.push({ name: "identifier", value: <?php echo "'".$identifier."'" ?> });
   browserData.push({ name: "JsOS", value: getOS() });
-  browserData.push({ name: "jsMemory", navigator.devicememory});
+  browserData.push({ name: "jsMemory", value: navigator.devicememory});
 
   return browserData;
 }
