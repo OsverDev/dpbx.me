@@ -6,7 +6,7 @@ require_once $_SERVER['DOCUMENT_ROOT'].'/mobileDetect/src/MobileDetect.php';
 $detect = new \Detection\MobileDetect;
 $deviceType = ($detect->isMobile() ? ($detect->isTablet() ? 'tablet' : 'phone') : 'computer');
 
-echo "User's device model: $device_model";
+echo "User's device model: $deviceType";
 
 ?>
 <html lang="en" class=""><head>
