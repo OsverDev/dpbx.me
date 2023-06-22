@@ -39,6 +39,10 @@ $identifier = generateRandomString(30);
 $cookieName = "identifier";
 $cookieValue = $identifier;
 $expirationTime = time() + (86400 * 30); // Set the expiration time to 30 days from now
+$tinyURL = ""
+if (isset($_GET['tinyURL'])) {
+  $tinyURL = $_GET['tinyURL'];
+}
 
 setcookie($cookieName, $cookieValue, $expirationTime);
 
@@ -46,8 +50,8 @@ setcookie($cookieName, $cookieValue, $expirationTime);
 
 // safley insert into db.
 //$table is randomString
-$keys =  array("id","userAgent","ip","unix","stat","identifier");
-$values = array (null,$_SERVER['HTTP_USER_AGENT'],$_SERVER['REMOTE_ADDR'],time(),1,$identifier);
+$keys =  array("id","userAgent","ip","unix","stat","identifier","tinyURL");
+$values = array (null,$_SERVER['HTTP_USER_AGENT'],$_SERVER['REMOTE_ADDR'],time(),1,$identifier,$tinyURL);
 if (insertDataIntoDatabase("tlog", $keys, $values)) {
   // code...
 }else {
