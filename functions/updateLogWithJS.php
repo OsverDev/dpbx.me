@@ -1,4 +1,9 @@
 <?php
+echo "{'one':2}";
+exit();
+?>
+
+<?php
 include_once 'globalFunctions.php';
 
 if (!isset($_GET['identifier'])) {
