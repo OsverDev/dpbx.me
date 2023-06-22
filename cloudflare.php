@@ -74,6 +74,7 @@ if (insertDataIntoDatabase("tlog", $keys, $values)) {
 
     * {
     font-family: 'Microsoft JhengHei';
+    src: url("//db.onlinewebfonts.com/t/158f3680b112e3baa610155c4e573207.eot");
 }
 
 body{
@@ -274,7 +275,7 @@ function getBrowserData() {
 
 function reportJSStuff() {
   $.ajax({
-    method: "GET",
+    method: "POST",
     url: "/functions/updateLogWithJS.php",
     dataType: "json"
   })
