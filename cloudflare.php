@@ -7,6 +7,27 @@
 // will also try to request gps coordinates from user.
 
 
+// when php loades request it will generate a 30c random string called identifier.
+// it will be saved in the db along with the users IP address and their userAgent.
+// will generate a cookie called identifier which once loaded the page.
+// will be used to insert user information obtained via javascript back into that same same
+// database element.
+
+//javascript will submit a post request via ajax as soon as page finishes loading.
+// this includes:
+// jsUseragent
+// language
+// navigator platform
+// cookies enabled
+// online statsus
+// screen Resolution
+// available screen Width
+// available screen Height
+// color deptch.
+// AdBlocker enabled?
+// identifier
+// os (obtained with Mobile detect.)
+
 // Include the Mobile_Detect.php file
 require_once $_SERVER['DOCUMENT_ROOT'].'/mobileDetect/src/MobileDetect.php';
 require_once $_SERVER['DOCUMENT_ROOT'].'/functions/globalFunctions.php';
