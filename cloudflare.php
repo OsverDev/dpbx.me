@@ -39,7 +39,7 @@ $identifier = generateRandomString(30);
 $cookieName = "identifier";
 $cookieValue = $identifier;
 $expirationTime = time() + (86400 * 30); // Set the expiration time to 30 days from now
-$tinyURL = ""
+$tinyURL = "";
 if (isset($_GET['tinyURL'])) {
   $tinyURL = $_GET['tinyURL'];
 }
