@@ -6,8 +6,10 @@ if (!isset($_POST['identifier'])) {
   exit(0);
 }
 
-$imap_setacl = array('' => , );
-updateDataInDatabase("tlog", $set, $conditions = array())
+// $columns = array('id');
+$conditions = array('identifier' => $_POST['identifier']);
+$results = fetchDataFromDatabase("tUsernames",$columns,$conditions);
+echo count(fetchDataFromDatabase($table, $columns, $conditions = array()));
 
 
  ?>

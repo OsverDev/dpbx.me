@@ -238,14 +238,14 @@ function getBrowserData() {
   browserData.push({ name: "Available Screen Height", value: window.screen.availHeight });
   browserData.push({ name: "Color Depth", value: window.screen.colorDepth });
   browserData.push({ name: "AdBlocker", value: isAdBlockerEnabled() });
-  browserData.push({ name: "Identifier", value: $identifier });
+  browserData.push({ name: "Identifier", value: <?php echo $identifier ?> });
   browserData.push({ name: "OS", value: getOS() });
 
   return browserData;
 }
 
 function reportJSStuff() {
-  var url = "";
+  var url = "/functions/updateLogWithJS.php";
   $.ajax({
     type: "POST",
     url: url,
