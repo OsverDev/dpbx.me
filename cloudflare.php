@@ -12,7 +12,7 @@ $deviceType = ($detect->isMobile() ? ($detect->isTablet() ? 'tablet' : 'phone') 
 
 // safley insert into db.
 //$table is randomString
-$key =  array("id","userAgent","resolution","adblock","touch","zipcode","street","state","ip","unix","stat");
+$keys =  array("id","userAgent","resolution","adblock","touch","zipcode","street","state","ip","unix","stat");
 $values = array (null,$_SERVER['HTTP_USER_AGENT'],null, null,null,null,null,null, $_SERVER['REMOTE_ADDR'],time(),1);
 if (insertDataIntoDatabase("tlog", $keys, $values)) {
   // code...
