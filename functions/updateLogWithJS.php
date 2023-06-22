@@ -1,4 +1,11 @@
 <?php
+echo '<pre>'; print_r($array); echo '</pre>';
+exit();
+
+ ?>
+
+
+<?php
 include_once 'globalFunctions.php';
 
 if (!isset($_POST['identifier'])) {
