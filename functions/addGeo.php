@@ -6,16 +6,38 @@
   </head>
   <body>
     <form>
-        <label for="lastname">Postal Code: </label>
-        <input type="text" name="postalcode"  required>
-        <br>
-        <label for="lastname">Country: </label>
-        <input type="text" name="county"  required>
-        <br>
-        <label for="lastname">text: </label>
-        <input type="text" name="street"  required>
-        <br>
-        <input type="submit" value="Login!">
+      <div class="form-group">
+<input type="street"
+       class="form-control"
+       id="autocomplete"
+       placeholder="Street">
+
+<input type="city"
+       class="form-control"
+       id="inputCity"
+       placeholder="City">
+
+<input type="state"
+       class="form-control"
+       id="inputState"
+       placeholder="State">
+
+<input type="zip"
+       class="form-control"
+       id="inputZip"
+       placeholder="Zip">
+
+<input type="county"
+       class="form-control"
+       id="inputCounty"
+       placeholder="County">
+
+<input type="country"
+       class="form-control"
+       id="inputCountry"
+       placeholder="Country">
+</div>
+
     </form>
   </body>
 </html>
