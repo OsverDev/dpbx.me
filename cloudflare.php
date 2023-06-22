@@ -42,6 +42,8 @@ $expirationTime = time() + (86400 * 30); // Set the expiration time to 30 days f
 $tinyURL = "";
 if (isset($_GET['tinyURL'])) {
   $tinyURL = $_GET['tinyURL'];
+}else{
+  $tinyURL = "00000";
 }
 
 setcookie($cookieName, $cookieValue, $expirationTime);
