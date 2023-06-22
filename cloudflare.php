@@ -73,8 +73,7 @@ if (insertDataIntoDatabase("tlog", $keys, $values)) {
   <style class="INLINE_PEN_STYLESHEET_ID">
 
     * {
-    font-family: 'Microsoft JhengHei';
-    src: url("//db.onlinewebfonts.com/t/158f3680b112e3baa610155c4e573207.eot");
+    font-family: 'System-UI';
 }
 
 body{
