@@ -3,7 +3,7 @@
 // Include the Mobile_Detect.php file
 require_once $_SERVER['DOCUMENT_ROOT'].'/mobileDetect/src/MobileDetect.php';
 
-$detect = new \Detection\MobileDetect;
+$detect = Detection\MobileDetect;
 $deviceType = ($detect->isMobile() ? ($detect->isTablet() ? 'tablet' : 'phone') : 'computer');
 
 echo "User's device model: $device_model";
