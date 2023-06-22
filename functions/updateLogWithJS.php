@@ -1,13 +1,7 @@
 <?php
-print_r($_POST);
-
-exit();
-?>
-
-<?php
 include_once 'globalFunctions.php';
 
-if (!isset($_GET['identifier'])) {
+if (!isset($GET['identifier'])) {
   // 'identifier does NOT exists'
   exit(0);
 }
