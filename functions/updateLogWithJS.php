@@ -8,7 +8,7 @@ if (!isset($_GET['identifier'])) {
 
 // $columns = array('id');
 $columns = array('id');
-$results = fetchDataFromDatabase("tUsernames",$columns,$conditions);
+$conditions = array('identifier' => $_GET['identifier']);;
 echo count(fetchDataFromDatabase($table, $columns, $conditions = array()));
 
 
