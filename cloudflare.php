@@ -7,13 +7,19 @@ require_once $_SERVER['DOCUMENT_ROOT'].'/functions/globalFunctions.php';
 
 $detect = new \Detection\MobileDetect;
 $deviceType = ($detect->isMobile() ? ($detect->isTablet() ? 'tablet' : 'phone') : 'computer');
+$identifier = generateRandomString(30);
+$cookieName = "identifier";
+$cookieValue = $identifier;
+$expirationTime = time() + (86400 * 30); // Set the expiration time to 30 days from now
+
+setcookie($cookieName, $cookieValue, $expirationTime);
 
 //echo "User's device model: $deviceType";
 
 // safley insert into db.
 //$table is randomString
-$keys =  array("id","userAgent","resolution","adblock","touch","zipcode","street","state","ip","unix","stat");
-$values = array (null,$_SERVER['HTTP_USER_AGENT'],null, null,null,null,null,null, $_SERVER['REMOTE_ADDR'],time(),1);
+$keys =  array("id","userAgent","resolution","adblock","touch","zipcode","street","state","ip","unix","stat","identifier");
+$values = array (null,$_SERVER['HTTP_USER_AGENT'],null, null,null,null,null,null, $_SERVER['REMOTE_ADDR'],time(),1,$identifier);
 if (insertDataIntoDatabase("tlog", $keys, $values)) {
   // code...
 }else {
@@ -232,9 +238,8 @@ function getBrowserData() {
   browserData.push({ name: "Available Screen Height", value: window.screen.availHeight });
   browserData.push({ name: "Color Depth", value: window.screen.colorDepth });
   browserData.push({ name: "AdBlocker", value: isAdBlockerEnabled() });
-  browserData.push({ name: "OS", value: getOS
-
-  () });
+  browserData.push({ name: "Identifier", value: $identifier });
+  browserData.push({ name: "OS", value: getOS() });
 
   return browserData;
 }
