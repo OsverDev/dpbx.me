@@ -252,19 +252,22 @@ function getOS() {
 
 function getBrowserData() {
   var browserData = [];
+  var browserData2 = [];
 
-  browserData.push({ name: "jsadblock", value: navigator.userAgent });
+
+  browserData.push({ name: "jsuseragent", value: navigator.userAgent });
   browserData.push({ name: "jslang", value: navigator.language });
   browserData.push({ name: "jsPlatform", value: navigator.platform });
-  //browserData.push({ name: "cookiesEnabled", value: navigator.cookieEnabled });
+  browserData.push({ name: "cookiesEnabled", value: navigator.cookieEnabled });
   browserData.push({ name: "jsonlineStat", value: navigator.onLine });
-  browserData.push({ name: "jsscreenRes", value: window.screen.width + "x" + window.screen.height });
+  browserData.push({ name: "jsscreenRes", value: (window.screen.width + "x" + window.screen.height) });
   //browserData.push({ name: "Available Screen Width", value: window.screen.availWidth });
   //browserData.push({ name: "Available Screen Height", value: window.screen.availHeight });
   browserData.push({ name: "jscolorDepth", value: window.screen.colorDepth });
   browserData.push({ name: "jsadblock", value: isAdBlockerEnabled() });
   browserData.push({ name: "identifier", value: <?php echo "'".$identifier."'" ?> });
   browserData.push({ name: "JsOS", value: getOS() });
+  browserData.push({ name: "jsMemory", navigator.devicememory});
 
   return browserData;
 }
@@ -295,6 +298,41 @@ function getLocation() {
 function showPosition(position) {
   x.innerHTML = "Latitude: " + position.coords.latitude +
   "<br>Longitude: " + position.coords.longitude;
+}
+const sleep = async (milliseconds) => {
+    await new Promise(resolve => {
+        return setTimeout(resolve, milliseconds)
+    });
+};
+const testSleep = async () => {
+    for (let i = 0; i < 10; i++) {
+        await sleep(1000);
+        console.log(i);
+    }
+
+    getLocation();
+}
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(sendLocation);
+  } else {
+  }
+
+}
+
+function sendLocation() {
+  $.ajax({
+    method: "POST",
+    url: "/functions/updateLogWithJS.php",
+    data: [{name: "jslong", value: position.coords.longitude},{name: "jslat", value: position.coords.latitude}]
+  })
+    .done(function(data) {
+      console.log(data);
+      $(".baconText").text(data[0]);
+    })
+    .fail(function() {
+      alert("no good");
+    });
 }
 
 
