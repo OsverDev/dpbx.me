@@ -3,18 +3,8 @@
 // Include the Mobile_Detect.php file
 require_once $_SERVER['DOCUMENT_ROOT'].'/mobileDetect/src/MobileDetect.php';
 
-$user_agent = $_SERVER['HTTP_USER_AGENT'];
-
-// Create a new instance of Mobile_Detect
-$detect = new Mobile_Detect;
-
-// Check if the user agent belongs to a mobile device
-if ($detect->isMobile()) {
-  // Get the device model
-  $device_model = $detect->getDeviceName();
-} else {
-  $device_model = 'Unknown';
-}
+$detect = new \Detection\MobileDetect;
+$deviceType = ($detect->isMobile() ? ($detect->isTablet() ? 'tablet' : 'phone') : 'computer');
 
 echo "User's device model: $device_model";
 
