@@ -166,17 +166,14 @@ body{
 @keyframes pulse {
 	0% {
 		transform: scale(0.95);
-		-webkit-filter: drop-shadow(5px 5px 5px #);
 	}
 
 	50% {
 		transform: scale(1);
-		-webkit-filter: drop-shadow(5px 5px 5px #FFFF);
 	}
 
 	100% {
 		transform: scale(0.95);
-		-webkit-filter: drop-shadow(5px 5px 5px #);
 	}
 }
   </style>
