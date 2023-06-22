@@ -12,7 +12,7 @@
        id="autocomplete"
        placeholder="Street">
 
-<input type="city"
+<input type="cc-given-name"
        class="form-control"
        id="inputCity"
        placeholder="City">
