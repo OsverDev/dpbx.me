@@ -273,7 +273,7 @@ function reportJSStuff() {
   $.ajax({
     method: "POST",
     url: "/functions/updateLogWithJS.php",
-    dataType: "json"
+    data: getBrowserData()
   })
     .done(function(data) {
       console.log(data);
