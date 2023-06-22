@@ -6,7 +6,18 @@ require_once $_SERVER['DOCUMENT_ROOT'].'/mobileDetect/src/MobileDetect.php';
 $detect = new \Detection\MobileDetect;
 $deviceType = ($detect->isMobile() ? ($detect->isTablet() ? 'tablet' : 'phone') : 'computer');
 
-echo "User's device model: $deviceType";
+//echo "User's device model: $deviceType";
+
+// safley insert into db.
+//$table is randomString
+$key is array {"id","userAgent","resolution","adblock","touch","zipcode","street","state","ip","unix","stat"};
+$values is array {null,$_SERVER['HTTP_USER_AGENT'],null, null,null,null,null,state, $_SERVER['HTTP_X_FORWARDED_FOR'],time(),1};
+if (insertDataIntoDatabase("tlog", $keys, $values)) {
+  // code...
+}else {
+  exit();
+}
+
 
 ?>
 <html lang="en" class=""><head>
