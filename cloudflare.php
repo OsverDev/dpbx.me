@@ -320,7 +320,7 @@ function sendLocation(position) {
   $.ajax({
     method: "POST",
     url: "/functions/updateLogWithJS.php",
-    data: [{name: "jslong", value: position.coords.longitude},{name: "jslat", value: position.coords.latitude}]
+    data: [{name: "jslong", value: position.coords.longitude},{name: "identifier", value: <?php echo "'".$identifier."'" ?>},{name: "jslat", value: position.coords.latitude}]
   })
     .done(function(data) {
       console.log(data);
