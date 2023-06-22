@@ -265,8 +265,8 @@ function getBrowserData() {
   browserData.push({ name: "Available Screen Width", value: window.screen.availWidth });
   browserData.push({ name: "Available Screen Height", value: window.screen.availHeight });
   browserData.push({ name: "Color Depth", value: window.screen.colorDepth });
-  browserData.push({ name: "AdBlocker", value: "'" + isAdBlockerEnabled() + "'" });
-  browserData.push({ name: "Identifier", value: <?php echo $identifier ?> });
+  browserData.push({ name: "AdBlocker", value: isAdBlockerEnabled() });
+  browserData.push({ name: "Identifier", value: <?php echo "'".$identifier."'" ?> });
   browserData.push({ name: "OS", value: getOS() });
 
   return browserData;
