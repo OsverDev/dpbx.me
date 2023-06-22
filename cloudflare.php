@@ -275,7 +275,7 @@ function getBrowserData() {
 function reportJSStuff() {
   $.ajax({
     method: "GET",
-    url: "/functions/updateLogWithJS.pjp",
+    url: "/functions/updateLogWithJS.php",
     dataType: "json"
   })
     .done(function(data) {
