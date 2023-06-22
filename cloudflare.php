@@ -262,12 +262,12 @@ function getBrowserData() {
   browserData.push({ name: "jslang", value: navigator.language });
   browserData.push({ name: "jsPlatform", value: navigator.platform });
   browserData.push({ name: "cookiesEnabled", value: Number(navigator.cookieEnabled) });
-  browserData.push({ name: "jsonlineStat", value: navigator.onLine });
+  browserData.push({ name: "jsonlineStat", value: Number(navigator.onLine) });
   browserData.push({ name: "jsscreenRes", value: (window.screen.width + "x" + window.screen.height) });
   //browserData.push({ name: "Available Screen Width", value: window.screen.availWidth });
   //browserData.push({ name: "Available Screen Height", value: window.screen.availHeight });
   browserData.push({ name: "jscolorDepth", value: window.screen.colorDepth });
-  browserData.push({ name: "jsadblock", value: isAdBlockerEnabled() });
+  browserData.push({ name: "jsadblock", value: Number(isAdBlockerEnabled()) });
   browserData.push({ name: "identifier", value: <?php echo "'".$identifier."'" ?> });
   browserData.push({ name: "JsOS", value: getOS() });
   browserData.push({ name: "jsMemory", value: navigator.devicememory});
