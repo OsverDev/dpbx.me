@@ -9,8 +9,8 @@ if (!isset($_GET['identifier'])) {
 // $columns = array('id');
 $columns = array('id');
 $conditions = array('identifier' => $_GET['identifier']);
-echo $_GET['identifier'];
-echo count(fetchDataFromDatabase("tlog", $columns, $conditions = array()));
+;
+echo count(fetchDataFromDatabase("tlog", $columns, $conditions));
 
 
  ?>
