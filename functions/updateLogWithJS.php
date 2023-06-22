@@ -1,5 +1,6 @@
 <?php
-echo "{'one':2}";
+print_r($_POST);
+
 exit();
 ?>
 
