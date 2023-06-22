@@ -10,7 +10,7 @@ if (!isset($_GET['identifier'])) {
 $columns = array('id');
 $conditions = array('identifier' => $_GET['identifier']);
 
-echo JSON.stringify(fetchDataFromDatabase("tlog", $columns, $conditions));
+echo json_encode(fetchDataFromDatabase("tlog", $columns, $conditions));
 
 
  ?>
