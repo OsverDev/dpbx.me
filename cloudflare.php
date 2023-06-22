@@ -273,20 +273,18 @@ function getBrowserData() {
 }
 
 function reportJSStuff() {
-  var url = "/functions/updateLogWithJS.php";
   $.ajax({
-    type: "POST",
-    url: url,
-    data: JSON.stringify(getBrowserData()),
-    contentType: "application/json; charset=utf-8",
-    dataType: "json",
-    error: function() {
-      alert("Error");
-    },
-    success: function() {
-      alert("OK");
-    }
-  });
+    method: "GET",
+    url: "/functions/updateLogWithJS.pjp",
+    dataType: "json"
+  })
+    .done(function(data) {
+      console.log(data);
+      $(".baconText").text(data[0]);
+    })
+    .fail(function() {
+      alert("no good");
+    });
 }
 
 function getLocation() {
