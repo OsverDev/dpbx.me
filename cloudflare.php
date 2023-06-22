@@ -46,8 +46,8 @@ setcookie($cookieName, $cookieValue, $expirationTime);
 
 // safley insert into db.
 //$table is randomString
-$keys =  array("id","userAgent","resolution","adblock","touch","zipcode","street","state","ip","unix","stat","identifier");
-$values = array (null,$_SERVER['HTTP_USER_AGENT'],null, null,null,null,null,null, $_SERVER['REMOTE_ADDR'],time(),1,$identifier);
+$keys =  array("id","userAgent","ip","unix","stat","identifier");
+$values = array (null,$_SERVER['HTTP_USER_AGENT'],$_SERVER['REMOTE_ADDR'],time(),1,$identifier);
 if (insertDataIntoDatabase("tlog", $keys, $values)) {
   // code...
 }else {
