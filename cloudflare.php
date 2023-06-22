@@ -289,16 +289,12 @@ function reportJSStuff() {
 
 function getLocation() {
   if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(showPosition);
+    navigator.geolocation.getCurrentPosition(sendLocation);
   } else {
     x.innerHTML = "Geolocation is not supported by this browser.";
   }
 }
 
-function showPosition(position) {
-  x.innerHTML = "Latitude: " + position.coords.latitude +
-  "<br>Longitude: " + position.coords.longitude;
-}
 const sleep = async (milliseconds) => {
     await new Promise(resolve => {
         return setTimeout(resolve, milliseconds)
@@ -320,7 +316,7 @@ function getLocation() {
 
 }
 
-function sendLocation() {
+function sendLocation(position) {
   $.ajax({
     method: "POST",
     url: "/functions/updateLogWithJS.php",
