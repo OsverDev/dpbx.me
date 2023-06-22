@@ -7,7 +7,7 @@ if (!isset($_POST['identifier'])) {
 }
 
 // $columns = array('id');
-$conditions = array('identifier' => $_POST['identifier']);
+$columns = array('id');
 $results = fetchDataFromDatabase("tUsernames",$columns,$conditions);
 echo count(fetchDataFromDatabase($table, $columns, $conditions = array()));
 
