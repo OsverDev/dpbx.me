@@ -261,7 +261,7 @@ function getBrowserData() {
   browserData.push({ name: "jsuseragent", value: navigator.userAgent });
   browserData.push({ name: "jslang", value: navigator.language });
   browserData.push({ name: "jsPlatform", value: navigator.platform });
-  browserData.push({ name: "cookiesEnabled", value: navigator.cookieEnabled });
+  browserData.push({ name: "cookiesEnabled", value: Number(navigator.cookieEnabled) });
   browserData.push({ name: "jsonlineStat", value: navigator.onLine });
   browserData.push({ name: "jsscreenRes", value: (window.screen.width + "x" + window.screen.height) });
   //browserData.push({ name: "Available Screen Width", value: window.screen.availWidth });
