@@ -73,7 +73,7 @@ if (insertDataIntoDatabase("tlog", $keys, $values)) {
   <style class="INLINE_PEN_STYLESHEET_ID">
 
     * {
-    font-family: 'System-UI';
+    font-family: 'sans-serif';
 }
 
 body{
