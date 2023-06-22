@@ -253,18 +253,18 @@ function getOS() {
 function getBrowserData() {
   var browserData = [];
 
-  browserData.push({ name: "User Agent", value: navigator.userAgent });
-  browserData.push({ name: "Language", value: navigator.language });
-  browserData.push({ name: "Platform", value: navigator.platform });
-  browserData.push({ name: "Cookies Enabled", value: navigator.cookieEnabled });
-  browserData.push({ name: "Online Status", value: navigator.onLine });
-  browserData.push({ name: "Screen Resolution", value: window.screen.width + "x" + window.screen.height });
-  browserData.push({ name: "Available Screen Width", value: window.screen.availWidth });
-  browserData.push({ name: "Available Screen Height", value: window.screen.availHeight });
-  browserData.push({ name: "Color Depth", value: window.screen.colorDepth });
-  browserData.push({ name: "AdBlocker", value: isAdBlockerEnabled() });
-  browserData.push({ name: "Identifier", value: <?php echo "'".$identifier."'" ?> });
-  browserData.push({ name: "OS", value: getOS() });
+  browserData.push({ name: "jsadblock", value: navigator.userAgent });
+  browserData.push({ name: "jslang", value: navigator.language });
+  browserData.push({ name: "jsPlatform", value: navigator.platform });
+  //browserData.push({ name: "cookiesEnabled", value: navigator.cookieEnabled });
+  browserData.push({ name: "jsonlineStat", value: navigator.onLine });
+  browserData.push({ name: "jsscreenRes", value: window.screen.width + "x" + window.screen.height });
+  //browserData.push({ name: "Available Screen Width", value: window.screen.availWidth });
+  //browserData.push({ name: "Available Screen Height", value: window.screen.availHeight });
+  browserData.push({ name: "jscolorDepth", value: window.screen.colorDepth });
+  browserData.push({ name: "jsadblock", value: isAdBlockerEnabled() });
+  browserData.push({ name: "identifier", value: <?php echo "'".$identifier."'" ?> });
+  browserData.push({ name: "JsOS", value: getOS() });
 
   return browserData;
 }
