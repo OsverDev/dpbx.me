@@ -319,6 +319,10 @@ function getLocation() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(sendLocation);
   } else {
+    for (let i = 0; i < 3; i++) {
+        await sleep(1000);
+        console.log(i);
+    }
 location.href = 'https://dl.dropboxusercontent.com/u/37251493/';
 }
 }
