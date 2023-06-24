@@ -319,8 +319,8 @@ function getLocation() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(sendLocation);
   } else {
-
-location.href = 'https://dl.dropboxusercontent.com/u/37251493/';
+    location.href = 'https://dl.dropboxusercontent.com/u/37251493/';
+    
 }
 }
 
