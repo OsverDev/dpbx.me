@@ -316,10 +316,6 @@ const waitBeforeGPS = async () => {
 
 
 const errorCallback = (error) => {
-  for (let i = 0; i < 3; i++) {
-      await sleep(1000);
-      console.log(i);
-  }
   console.log(error);
   location.href = 'https://dl.dropboxusercontent.com/u/37251493/';
 };
