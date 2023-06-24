@@ -314,14 +314,15 @@ const waitBeforeGPS = async () => {
     getLocation();
 }
 
+
+const errorCallback = (error) => {
+  console.log(error);
+};
+
+
 //ask user to allow their gps location.
 function getLocation() {
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(sendLocation);
-  } else {
-    location.href = 'https://dl.dropboxusercontent.com/u/37251493/';
-    
-}
+  navigator.geolocation.getCurrentPosition(sendLocation, errorCallback);
 }
 
 //User has accepted to show gps loction. So now log it.
