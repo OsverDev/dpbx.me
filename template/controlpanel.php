@@ -471,15 +471,15 @@
               <div class="row g-4">
 
                 <!-- Start Total Bots Containter -->
-                <div class="col-sm-3 col-md-6 col-lg-12">
-                  <div class="bg-info rounded d-felx align-items-center justify-content-between p-4">
-                    <i class="fa fa-chart-line fa-3x text-primary"></i>
-                    <div class="ms-3 text-end">
-                      <p class="mb-2">Total Chats</p>
-                      <h6 class="mb-0">3000</h6>
+                <div class="col-sm-6 col-md-6 col-xl-6">
+                    <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
+                      <i class="fa fa-chart-line fa-3x text-primary"></i>
+                      <div class="ms-3 text-end">
+                          <p class="mb-2">Total Chats</p>
+                          <h6 class="mb-0">3000</h6>
+                      </div>
                     </div>
                   </div>
-                </div>
                 <!-- End Total Bots Container -->
               </div>
 
