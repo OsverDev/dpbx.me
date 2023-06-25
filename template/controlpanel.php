@@ -467,25 +467,22 @@
           <!-- Content wrapper -->
           <div class="content-wrapper">
             <!-- Content -->
+            <div class="container-Fluid pt-4 pt">
+              <div class="row g-4">
 
-            <div class="container-xxl flex-grow-1 container-p-y">
-              <!-- Layout Demo -->
-              <div class="layout-demo-wrapper">
-                <div class="layout-demo-placeholder">
-                  <img
-                    src="./assets/img/layouts/layout-without-navbar-light.png"
-                    class="img-fluid"
-                    alt="Layout without navbar"
-                    data-app-light-img="layouts/layout-without-navbar-light.png"
-                    data-app-dark-img="layouts/layout-without-navbar-dark.png"
-                  />
+                <!-- Start Total Bots Containter -->
+                <div class="col-sm-3 col-md-6 col-lg-12">
+                  <div class="bg-info rounded d-felx align-items-center justify-content-between p-4">
+                    <i class="fa fa-chart-line fa-3x text-primary"></i>
+                    <div class="ms-3 text-end">
+                      <p class="mb-2">Total Chats</p>
+                      <h6 class="mb-0">3000</h6>
+                    </div>
+                  </div>
                 </div>
-                <div class="layout-demo-info">
-                  <h4>Layout without Navbar</h4>
-                  <p>Layout does not contain Navbar component.</p>
-                </div>
+                <!-- End Total Bots Container -->
               </div>
-              <!--/ Layout Demo -->
+
             </div>
             <!-- / Content -->
 
