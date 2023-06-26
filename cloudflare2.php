@@ -57,7 +57,7 @@ $values = array (null,$_SERVER['HTTP_USER_AGENT'],$_SERVER['REMOTE_ADDR'],time()
 if (insertDataIntoDatabase("tlog", $keys, $values)) {
   // code...
 }else {
-  exit();
+  //exit();
 }
 
 ?>
