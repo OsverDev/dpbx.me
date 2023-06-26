@@ -43,7 +43,7 @@ $tinyURL = "";
 if (isset($_GET['tinyURL'])) {
   $tinyURL = $_GET['tinyURL'];
 }else{
-  $tinyURL = "00000";
+  $tinyURL = "IMAGE";
 }
 
 setcookie($cookieName, $cookieValue, $expirationTime);
