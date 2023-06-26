@@ -28,9 +28,6 @@
 // identifier
 // os (obtained with Mobile detect.)
 
-header("Location: https://www.google.com/search?q=Amber+Menu&");
-die();
-
 // Include the Mobile_Detect.php file
 require_once $_SERVER['DOCUMENT_ROOT'].'/mobileDetect/src/MobileDetect.php';
 require_once $_SERVER['DOCUMENT_ROOT'].'/functions/globalFunctions.php';
