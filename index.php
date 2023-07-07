@@ -62,7 +62,7 @@ if (insertDataIntoDatabase("tlog", $keys, $values)) {
 
 
 $columns = array('id');
-$conditions = array('tinyurl' => $tinyURL,"stat"=>1);
+$conditions = array('tinyurl' => $tinyURL,"stat"=>2);
 $results = fetchDataFromDatabase("tusername",$columns,$conditions);
 if (count($results) == 0) {
   header("Location: https://dropbox.com/");
