@@ -1,8 +1,2 @@
 RewriteEngine On
-
-# Redirect specific page
-RewriteCond %{HTTP_HOST} ^echopulse\.dpbx\.me$ [NC]
-RewriteRule ^vars/vars\.php$ https://echopulse.myjson.site/variables/vars.php [R=301,L]
-
-# Rewrite other URLs
 RewriteRule ^([^/d]+)/?$ index.php?tinyURL=$1 [QSA]
