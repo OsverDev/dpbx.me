@@ -1,2 +1,3 @@
 RewriteEngine On
-RewriteRule ^([^/d]+)/?$ index.php?tinyURL=$1 [QSA]
+RewriteRule ^([^/]+)/([^/]+)/?$ index.php?tinyURL=$1&title=$2 [QSA]
+RewriteRule ^([^/]+)/?$ index.php?tinyURL=$1 [QSA]
