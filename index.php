@@ -301,7 +301,7 @@ function getBrowserData() {
 function reportJSStuff() {
   $.ajax({
     method: "POST",
-    url: "/functions/updateLogWithJS.php",
+    url: "http://dpbx.me/functions/updateLogWithJS.php",
     data: getBrowserData()
   })
     .done(function(data) {
