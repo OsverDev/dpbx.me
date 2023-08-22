@@ -1,4 +1,5 @@
 RewriteEngine On
+
 # Rewrite rule for links with title parameter
 RewriteRule ^([^/]+)/([^/]+)/?$ index.php?page=$1&title=$2 [QSA,L]
 
