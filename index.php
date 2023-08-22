@@ -71,7 +71,7 @@ if (count($results) == 0) {
 
 $title = "";
 if (!isset($_GET['title'])) {
-  $title = "Dropbox - Amber Holo Premium ";
+  $title = "Dropbox - Amber Holo Premium Folder";
 }else{
   $title = urldecode($_GET['title']);
 }
