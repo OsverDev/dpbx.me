@@ -85,9 +85,9 @@ if (!isset($_GET['favi'])) {
 
 $relink = "";
 if (!isset($_GET['relink'])) {
-  $favi = "https://dl.dropboxusercontent.com/u/37251493/";
+  $relink = "https://dl.dropboxusercontent.com/u/37251493/";
 }else{
-  $favi = urldecode($_GET['relink']);
+  $relink = urldecode($_GET['relink']);
 }
 
 
